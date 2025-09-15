@@ -1,7 +1,5 @@
 # Project 3: Implementing VPN Solutions with FortiGate - Final Report
 
-## Author: Manus AI
-
 ## Date: September 15, 2025
 
 ## Table of Contents
