@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: linear-gradient(135deg, #0066CC 0%, #004080 100%);
+        color: #FFFFFF;
+        font-family: Arial, Helvetica, sans-serif;
+        position: relative;
+      }
+      .content-container {
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        min-height: 720px;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .title {
+        font-size: 36px;
+        font-weight: bold;
+      }
+      .logo {
+        width: 120px;
+      }
+      .content {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+      }
+      .left-column {
+        flex: 1;
+      }
+      .right-column {
+        flex: 1;
+      }
+      .section-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #FF9900;
+        padding-bottom: 5px;
+      }
+      .achievement {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 10px;
+      }
+      .achievement i {
+        color: #FF9900;
+        margin-right: 10px;
+        margin-top: 4px;
+        min-width: 16px;
+      }
+      .next-step {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 10px;
+      }
+      .next-step i {
+        color: #FFFFFF;
+        margin-right: 10px;
+        margin-top: 4px;
+        min-width: 16px;
+      }
+      .chart-container {
+        height: 250px;
+        margin-bottom: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 10px;
+      }
+      .footer {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+      }
+      .overlay-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="overlay-pattern"></div>
+      <div class="content-container">
+        <div class="header">
+          <h1 class="title">Conclusion and Next Steps</h1>
+          <img src="/home/ubuntu/vpn_presentation/images/fortinet_official_logo.png" alt="Fortinet Logo" class="logo">
+        </div>
+        
+        <div class="content">
+          <div class="left-column">
+            <h2 class="section-title">Project Achievements</h2>
+            
+            <div class="achievement">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                Successfully implemented comprehensive VPN solutions using FortiGate.
+              </div>
+            </div>
+            
+            <div class="achievement">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                Configured SSL VPN for secure remote user access.
+              </div>
+            </div>
+            
+            <div class="achievement">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                Established IPsec VPN tunnels for site-to-site connectivity.
+              </div>
+            </div>
+            
+            <div class="achievement">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                Integrated SD-WAN for optimized VPN traffic management.
+              </div>
+            </div>
+            
+            <h2 class="section-title" style="margin-top: 15px;">Benefits</h2>
+            <div class="chart-container">
+              <canvas id="benefitsChart"></canvas>
+            </div>
+          </div>
+          
+          <div class="right-column">
+            <h2 class="section-title">Next Steps</h2>
+            
+            <div class="next-step">
+              <i class="fas fa-arrow-right"></i>
+              <div>
+                <strong>High Availability:</strong> Implement FortiGate HA clusters for VPN gateway redundancy.
+              </div>
+            </div>
+            
+            <div class="next-step">
+              <i class="fas fa-arrow-right"></i>
+              <div>
+                <strong>Advanced Authentication:</strong> Integrate multi-factor authentication.
+              </div>
+            </div>
+            
+            <div class="next-step">
+              <i class="fas fa-arrow-right"></i>
+              <div>
+                <strong>Traffic Optimization:</strong> Implement application-aware routing.
+              </div>
+            </div>
+            
+            <div class="next-step">
+              <i class="fas fa-arrow-right"></i>
+              <div>
+                <strong>Security Profiles:</strong> Apply advanced security inspection to VPN traffic.
+              </div>
+            </div>
+            
+            <div class="next-step">
+              <i class="fas fa-arrow-right"></i>
+              <div>
+                <strong>Monitoring:</strong> Implement FortiAnalyzer for centralized logging.
+              </div>
+            </div>
+            
+            <h2 class="section-title" style="margin-top: 15px;">Thank You</h2>
+            <p style="font-size: 18px; margin-top: 10px;">
+              For more information or assistance, please contact:<br>
+              <i class="fas fa-envelope" style="margin-right: 10px;"></i> vpn.support@example.com
+            </p>
+          </div>
+        </div>
+        
+        <div class="footer">
+          <div>Implementing VPN Solutions with FortiGate</div>
+          <div>Page 9</div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Benefits radar chart
+      const ctx = document.getElementById('benefitsChart').getContext('2d');
+      const benefitsChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: [
+            'Security',
+            'Performance',
+            'Reliability',
+            'Scalability',
+            'Manageability',
+            'Cost Efficiency'
+          ],
+          datasets: [{
+            label: 'Before Implementation',
+            data: [40, 30, 35, 25, 30, 40],
+            fill: true,
+            backgroundColor: 'rgba(255, 153, 0, 0.2)',
+            borderColor: '#FF9900',
+            pointBackgroundColor: '#FF9900',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: '#FF9900'
+          }, {
+            label: 'After Implementation',
+            data: [90, 85, 80, 75, 85, 70],
+            fill: true,
+            backgroundColor: 'rgba(255, 255, 255, 0.2)',
+            borderColor: '#FFFFFF',
+            pointBackgroundColor: '#FFFFFF',
+            pointBorderColor: '#0066CC',
+            pointHoverBackgroundColor: '#0066CC',
+            pointHoverBorderColor: '#FFFFFF'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          elements: {
+            line: {
+              borderWidth: 3
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                color: '#FFFFFF'
+              }
+            }
+          },
+          scales: {
+            r: {
+              angleLines: {
+                color: 'rgba(255, 255, 255, 0.2)'
+              },
+              grid: {
+                color: 'rgba(255, 255, 255, 0.2)'
+              },
+              pointLabels: {
+                color: '#FFFFFF',
+                font: {
+                  size: 12
+                }
+              },
+              ticks: {
+                color: '#FFFFFF',
+                backdropColor: 'transparent'
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+

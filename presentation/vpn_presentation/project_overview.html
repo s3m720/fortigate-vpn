@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #FFFFFF;
+        color: #333333;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .content-container {
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        min-height: 720px;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .title {
+        font-size: 36px;
+        font-weight: bold;
+        color: #0066CC;
+      }
+      .logo {
+        width: 120px;
+      }
+      .content {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+      }
+      .left-column {
+        flex: 1;
+      }
+      .right-column {
+        flex: 1;
+      }
+      .section-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #0066CC;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #FF9900;
+        padding-bottom: 5px;
+      }
+      .project-outline {
+        width: 100%;
+        max-width: 500px;
+        height: 250px;
+        object-fit: contain;
+      }
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      li {
+        margin-bottom: 8px;
+        display: flex;
+        align-items: flex-start;
+      }
+      li i {
+        color: #FF9900;
+        margin-right: 10px;
+        margin-top: 4px;
+      }
+      .footer {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        color: #666666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="content-container">
+        <div class="header">
+          <h1 class="title">Project Overview</h1>
+          <img src="/home/ubuntu/vpn_presentation/images/fortinet_official_logo.png" alt="Fortinet Logo" class="logo">
+        </div>
+        
+        <div class="content">
+          <div class="left-column">
+            <h2 class="section-title">Project Scope</h2>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Implement VPN solutions using FortiGate firewalls</li>
+              <li><i class="fas fa-check-circle"></i> Configure SSL VPN for secure remote access</li>
+              <li><i class="fas fa-check-circle"></i> Establish IPsec VPN for site-to-site connectivity</li>
+              <li><i class="fas fa-check-circle"></i> Integrate SD-WAN for optimized traffic management</li>
+            </ul>
+            
+            <h2 class="section-title" style="margin-top: 20px;">Objectives</h2>
+            <ul>
+              <li><i class="fas fa-bullseye"></i> Ensure secure remote access for employees</li>
+              <li><i class="fas fa-bullseye"></i> Establish reliable site-to-site connectivity</li>
+              <li><i class="fas fa-bullseye"></i> Optimize network performance with SD-WAN</li>
+              <li><i class="fas fa-bullseye"></i> Implement best security practices</li>
+            </ul>
+          </div>
+          
+          <div class="right-column">
+            <h2 class="section-title">Project Timeline</h2>
+            <img src="/home/ubuntu/vpn_presentation/images/project_outline.png" alt="Project Timeline" class="project-outline">
+            
+            <h2 class="section-title" style="margin-top: 20px;">Deliverables</h2>
+            <ul>
+              <li><i class="fas fa-file-alt"></i> VPN architecture design documentation</li>
+              <li><i class="fas fa-file-alt"></i> SSL VPN configuration guide and test scenarios</li>
+              <li><i class="fas fa-file-alt"></i> IPsec VPN configuration guide and tests</li>
+              <li><i class="fas fa-file-alt"></i> SD-WAN integration guide and performance report</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer">
+          <div>Implementing VPN Solutions with FortiGate</div>
+          <div>Page 2</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
