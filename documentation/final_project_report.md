@@ -1,4 +1,4 @@
-# Project 3: Implementing VPN Solutions with FortiGate - Final Report
+# Implementing VPN Solutions with FortiGate - Final Report
 
 ## Date: October 15, 2025
 
